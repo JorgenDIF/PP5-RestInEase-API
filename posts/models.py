@@ -23,6 +23,33 @@ class Post(models.Model):
         ('walden', 'Walden'),
         ('xpro2', 'X-pro II')
     ]
+
+    mood_choices = [
+        ('happy', 'Happy'),
+        ('sad', 'Sad'),
+        ('excited', 'Excited'),
+        ('relaxed', 'Relaxed'),
+        ('stressed', 'Stressed'),
+        ('adventurous', 'Adventurous'),
+        ('grateful', 'Grateful'),
+        ('lonely', 'Lonely'),
+        ('angry', 'Angry'),
+        ('in_love', 'In Love')
+    ]
+
+    category_choices = [
+        ('nature', 'Nature'),
+        ('cafe', 'Cafe'),
+        ('home', 'Home'),
+        ('workplace', 'Workplace'),
+        ('park', 'Park'),
+        ('beach', 'Beach'),
+        ('mountain', 'Mountain'),
+        ('city', 'City'),
+        ('countryside', 'Countryside'),
+        ('water', 'Water')
+    ]
+
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -33,6 +60,12 @@ class Post(models.Model):
     )
     image_filter = models.CharField(
         max_length=32, choices=image_filter_choices, default='normal'
+    )
+    mood = models.CharField(
+        max_length=32, choices=mood_choices, default='happy'
+    )
+    category = models.CharField(
+        max_length=32, choices=category_choices, default='nature'
     )
 
     class Meta:
