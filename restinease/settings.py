@@ -70,8 +70,7 @@ else:
 
     ]
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
 
 # Application definition
