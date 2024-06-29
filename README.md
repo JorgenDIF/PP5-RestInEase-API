@@ -54,11 +54,32 @@ The frontend is a React app that is connected to the API
 
 ### <a id="erd">Erd</a>
 
-The ERD for the project is as follows:
+The ERD for the project:
+
+<details>
+<summary>Click to see ERD</summary>
+
+![ERD](documents/rest-in-ease-erd.png)
+
+</details>
 
 ### <a id="models">Models</a>
 
+
 The models for the project are as follows:
+
+* User
+* Profile
+* Followers
+* Likes
+* Comments
+* Posts
+
+I followed the walthrough from Code Institute to create the models but I customized 3 of them to suit my project. The models are as follows:
+- Profile : I added a field called mood to the profile model to allow users to add their mood to their profile.
+- Posts : I added a field called mood to the posts model to allow users to add their mood to their posts. I also added a field called category to the posts model to allow users to categorize their posts.
+- Comments : I added a field called mood to the comments model to allow users to add their mood to their comments.
+
 
 
 ## <a id="testing">Testing</a>
