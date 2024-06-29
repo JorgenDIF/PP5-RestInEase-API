@@ -5,6 +5,8 @@
 - [Introduction](#introduction)
 - [Purpose and goals](#purpose-and-goals)
 - [API Integration](#api-integration)
+  - [API Endpoints](#api-endpoints)
+  - [Crud functionality](#crud-functionality)
 - [Agile Methodology](#agile-methodology)
 - [Frontend](#frontend)
 - [Database](#database)
@@ -30,6 +32,15 @@ This is the API for Rest in Ease. It is a Django Rest Framework API that is conn
 ## <a id="api-integration">API Integration</a>
 
 The API is integrated with the frontend using Django Rest Framework
+
+### <a id="api-endpoints">API Endpoints</a>
+
+The API has the following endpoints:
+
+
+### <a id="crud-functionality">Crud functionality</a>
+
+The API has CRUD functionality for the following models:
 
 ## <a id="agile-methodology">Agile Methodology</a>
 
