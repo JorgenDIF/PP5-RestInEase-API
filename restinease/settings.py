@@ -42,10 +42,16 @@ ALLOWED_HOSTS = ['*']
 
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://127.0.0.1:5173",
+    "http://rest-in-ease-def49ec95707.herokuapp.com",
     "https://rest-in-ease-def49ec95707.herokuapp.com",
-    "http://rest-in-ease-def49ec95707.herokuapp.com"
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^http://127.0.0.1:\d+$",
+    r"^http://localhost:\d+$",
+    r"^http://rest-in-ease-def49ec95707.herokuapp.com\d+$",
+    r"^https://rest-in-ease-def49ec95707.herokuapp.com\d+$",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
