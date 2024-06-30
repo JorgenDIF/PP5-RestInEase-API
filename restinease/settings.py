@@ -49,11 +49,15 @@ else:
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
-        "https://rest-in-ease-def49ec95707.herokuapp.com",
-        "http://rest-in-ease-def49ec95707.herokuapp.com"
+        "https://rest-in-ease-api-003370b5e18f.herokuapp.com"
+
+
     ]
 
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ALLOW_CREDENTIALS = True
+# Application definition
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
