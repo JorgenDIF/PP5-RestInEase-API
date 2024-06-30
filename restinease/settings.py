@@ -41,7 +41,14 @@ DEBUG = os.environ.get('DEVELOPMENT') == 'True'
 ALLOWED_HOSTS = ['*']
 
 # CORS configuration
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://rest-in-ease-def49ec95707.herokuapp.com",
+    "http://rest-in-ease-def49ec95707.herokuapp.com"
+]
+
+CORS_ALLOW_CREDENTIALS = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
