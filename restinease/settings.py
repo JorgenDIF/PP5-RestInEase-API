@@ -47,9 +47,9 @@ ALLOWED_HOSTS = ['*']
 # CORS configuration
 # CORS configuration
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
-    ]
+   
+    client_origins = os.environ.get('CLIENT_ORIGIN').split(',')
+    CORS_ALLOWED_ORIGINS = client_origins
 else:
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
