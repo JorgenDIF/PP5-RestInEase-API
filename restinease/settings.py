@@ -41,21 +41,31 @@ DEBUG = os.environ.get('DEVELOPMENT') == 'True'
 ALLOWED_HOSTS = ['*']
 
 # CORS configuration
-# CORS configuration
 if 'CLIENT_ORIGIN' in os.environ:
-    CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN')
-    ]
+    client_origins = os.environ.get('CLIENT_ORIGIN').split(',')
+    CORS_ALLOWED_ORIGINS = client_origins
 else:
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://rest-in-ease-def49ec95707.herokuapp.com",
-        "http://rest-in-ease-def49ec95707.herokuapp.com"
+        "http://rest-in-ease-def49ec95707.herokuapp.com",
+        "https://rest-in-ease-api-003370b5e18f.herokuapp.com"
     ]
 
 CORS_ALLOW_CREDENTIALS = True
-# Application definition
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+CORS_EXPOSE_HEADERS = ['Content-Type', 'X-CSRFToken']
 
 
 INSTALLED_APPS = [
