@@ -25,7 +25,7 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d %b %Y',
 }
 
-RREST_AUTH = {
+REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_HTTPONLY': False,
     'JWT_AUTH_COOKIE': "auth-token",
