@@ -25,14 +25,10 @@ REST_FRAMEWORK = {
     'DATETIME_FORMAT': '%d %b %Y',
 }
 
-REST_AUTH = {
-    'USE_JWT': True,
-    'JWT_AUTH_HTTPONLY': False,
-    'JWT_AUTH_COOKIE': "auth-token",
-    'JWT_AUTH_REFRESH_COOKIE': 'refresh-token',
-    'JWT_AUTH_SECURE': True,
-    'JWT_AUTH_SAMESITE': 'None',
-}
+REST_USE_JWT = True
+JWT_AUTH_SECURE = True
+JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -47,16 +43,15 @@ ALLOWED_HOSTS = ['*']
 # CORS configuration
 # CORS configuration
 if 'CLIENT_ORIGIN' in os.environ:
-   
-    client_origins = os.environ.get('CLIENT_ORIGIN').split(',')
-    CORS_ALLOWED_ORIGINS = client_origins
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
 else:
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
         "https://rest-in-ease-def49ec95707.herokuapp.com",
-        "http://rest-in-ease-def49ec95707.herokuapp.com",
-        "https://rest-in-ease-api-003370b5e18f.herokuapp.com"
+        "http://rest-in-ease-def49ec95707.herokuapp.com"
     ]
 
 CORS_ALLOW_CREDENTIALS = True
