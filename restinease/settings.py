@@ -56,6 +56,7 @@ else:
         "http://127.0.0.1:3000",
         "https://rest-in-ease-def49ec95707.herokuapp.com",
         "http://rest-in-ease-def49ec95707.herokuapp.com"
+        "https://rest-in-ease-api-003370b5e18f.herokuapp.com"
     ]
 
 CORS_ALLOW_CREDENTIALS = True
