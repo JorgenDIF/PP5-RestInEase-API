@@ -41,10 +41,15 @@ DEBUG = os.environ.get('DEVELOPMENT') == 'True'
 ALLOWED_HOSTS = ['*']
 
 # CORS configuration
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [os.environ.get("CLIENT_ORIGIN_DEV")]
-# Application definition
-
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN'),
+        os.environ.get('CLIENT_ORIGIN_DEV')
+   ]
+else:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+        r"^https://.*\.codeinstitute-ide\.net$",
+    ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
