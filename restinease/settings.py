@@ -46,15 +46,22 @@ DEBUG = os.environ.get('DEVELOPMENT') == 'True'
 ALLOWED_HOSTS = ['*']
 
 # CORS configuration
+# if 'CLIENT_ORIGIN' in os.environ:
+#     CORS_ALLOWED_ORIGINS = [
+#         os.environ.get('CLIENT_ORIGIN'),
+#         os.environ.get('CLIENT_ORIGIN_DEV')
+#    ]
+# else:
+#     CORS_ALLOWED_ORIGIN_REGEXES = [
+#         r"^https://.*\.codeinstitute-ide\.net$",
+#     ]
+
 if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
-        os.environ.get('CLIENT_ORIGIN'),
-        os.environ.get('CLIENT_ORIGIN_DEV')
-   ]
-else:
-    CORS_ALLOWED_ORIGIN_REGEXES = [
-        r"^https://.*\.codeinstitute-ide\.net$",
+        os.environ.get('CLIENT_ORIGIN')
     ]
+if 'CLIENT_ORIGIN_DEV' in os.environ:    
+    CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
 
 CORS_ALLOW_CREDENTIALS =  True
 
