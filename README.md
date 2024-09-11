@@ -140,7 +140,90 @@ I followed the walthrough from Code Institute to create the models but I customi
 
 ## <a id="testing">Testing</a>
 
-The project was tested using Django's test framework
+I tested endpoints using postman:
+
+
+<details>
+<summary>Login</summary>
+
+- Login: Tested the login functionality to authenticate a user
+![Login Test](documents/login.png)
+
+</details>
+
+<details>
+<summary>Create a Post</summary>
+
+- Create a Post: Verified the ability to create a new post 
+![Create a Post](documents/post.png)
+
+</details>
+
+<details>
+<summary>Get a Post</summary>
+
+- Get a Post: Retrieved details of a specific post by its ID
+![Get a Post](documents/getapost.png)
+
+</details>
+
+<details>
+<summary>Update a Post</summary>
+
+- Update a Post: Tested updating an existing post
+![Update Post](documents/updateapost.png)
+
+</details>
+
+<details>
+<summary>Delete a Post</summary>
+
+- Delete a Post: Verified the deletion of a post 
+![Delete a Post](documents/deleteapost.png)
+
+</details>
+
+<details>
+<summary>Like a Post</summary>
+
+- Like a Post: Tested liking a post and validating the response 
+![Like a Post](documents/likeapost.png)
+
+</details>
+
+<details>
+<summary>Follow a User</summary>
+
+- Follow a User: Ensured that a user can follow another user 
+![Follow a User](documents/followauser.png)
+
+</details>
+
+<details>
+<summary>Get followers for a User</summary>
+
+- Get Followers for a User: Retrieved the list of followers for a specific user 
+![Get followers for a User](documents/getfollowersforauser.png)
+
+</details>
+
+<details>
+<summary>Add a Comment</summary>
+
+- Add a Comment: Tested the functionality for adding comments to posts 
+![Add Comment](documents/comment.png)
+
+</details>
+
+<details>
+<summary>Get Comments</summary>
+
+- Get Comments: Retrieved the list of comments on a specific post
+ ![Get Comments](documents/getcomments.png)
+
+ </details>
+
+
 
 ## <a id="set-up-and-deployment">Set Up and deployment</a>
 
