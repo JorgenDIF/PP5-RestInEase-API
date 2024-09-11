@@ -37,6 +37,64 @@ The API is integrated with the frontend using Django Rest Framework
 
 The API has the following endpoints:
 
+<details>
+<summary>End Points</summary>
+
+| **HTTP Method** | **Endpoint**                            | **Description**                                   | **Authentication Required** |
+| --------------- | --------------------------------------- | ------------------------------------------------- | --------------------------- |
+| **POST**        | `/dj-rest-auth/login/`                  | Log in and receive access and refresh tokens.     | No                          |
+| **POST**        | `/dj-rest-auth/logout/`                 | Log out the user and invalidate tokens.           | Yes                         |
+| **POST**        | `/dj-rest-auth/registration/`           | Register a new user account.                      | No                          |
+| **POST**        | `/dj-rest-auth/password/reset/`         | Send a password reset email.                      | No                          |
+| **POST**        | `/dj-rest-auth/password/reset/confirm/` | Confirm and reset the password using token.       | No                          |
+| **POST**        | `/dj-rest-auth/token/refresh/`          | Refresh the access token using the refresh token. | Yes                         |
+
+### Post Endpoints
+
+| **HTTP Method** | **Endpoint**       | **Description**                         | **Authentication Required** |
+| --------------- | ------------------ | --------------------------------------- | --------------------------- |
+| **GET**         | `/posts/`          | Retrieve a list of posts.               | No                          |
+| **POST**        | `/posts/`          | Create a new post.                      | Yes                         |
+| **GET**         | `/posts/<int:pk>/` | Retrieve a single post by ID.           | No                          |
+| **PUT**         | `/posts/<int:pk>/` | Update a post if the user is the owner. | Yes                         |
+| **DELETE**      | `/posts/<int:pk>/` | Delete a post if the user is the owner. | Yes                         |
+
+### Comment Endpoints
+
+| **HTTP Method** | **Endpoint**          | **Description**                            | **Authentication Required** |
+| --------------- | --------------------- | ------------------------------------------ | --------------------------- |
+| **GET**         | `/comments/`          | Retrieve a list of comments.               | No                          |
+| **POST**        | `/comments/`          | Create a new comment.                      | Yes                         |
+| **GET**         | `/comments/<int:pk>/` | Retrieve a single comment by ID.           | No                          |
+| **PUT**         | `/comments/<int:pk>/` | Update a comment if the user is the owner. | Yes                         |
+| **DELETE**      | `/comments/<int:pk>/` | Delete a comment if the user is the owner. | Yes                         |
+
+### Like Endpoints
+
+| **HTTP Method** | **Endpoint**       | **Description**               | **Authentication Required** |
+| --------------- | ------------------ | ----------------------------- | --------------------------- |
+| **GET**         | `/likes/`          | Retrieve a list of likes.     | No                          |
+| **POST**        | `/likes/`          | Like a post.                  | Yes                         |
+| **GET**         | `/likes/<int:pk>/` | Retrieve a single like by ID. | No                          |
+| **DELETE**      | `/likes/<int:pk>/` | Unlike a post.                | Yes                         |
+
+### Follower Endpoints
+
+| **HTTP Method** | **Endpoint**           | **Description**                          | **Authentication Required** |
+| --------------- | ---------------------- | ---------------------------------------- | --------------------------- |
+| **GET**         | `/followers/`          | Retrieve a list of followers.            | No                          |
+| **POST**        | `/followers/`          | Follow another user.                     | Yes                         |
+| **GET**         | `/followers/<int:pk>/` | Retrieve a single follower record by ID. | No                          |
+| **DELETE**      | `/followers/<int:pk>/` | Unfollow a user.                         | Yes                         |
+
+### Profile Endpoints
+
+| **HTTP Method** | **Endpoint**          | **Description**                            | **Authentication Required** |
+| --------------- | --------------------- | ------------------------------------------ | --------------------------- |
+| **GET**         | `/profiles/`          | Retrieve a list of profiles.               | No                          |
+| **GET**         | `/profiles/<int:pk>/` | Retrieve a single profile by ID.           | No                          |
+| **PUT**         | `/profiles/<int:pk>/` | Update a profile if the user is the owner. | Yes                         |
+</details>
 
 ### <a id="crud-functionality">Crud functionality</a>
 
@@ -65,22 +123,20 @@ The ERD for the project:
 
 ### <a id="models">Models</a>
 
-
 The models for the project are as follows:
 
-* User
-* Profile
-* Followers
-* Likes
-* Comments
-* Posts
+- User
+- Profile
+- Followers
+- Likes
+- Comments
+- Posts
 
 I followed the walthrough from Code Institute to create the models but I customized 3 of them to suit my project. The models are as follows:
+
 - Profile : I added a field called mood to the profile model to allow users to add their mood to their profile.
 - Posts : I added a field called mood to the posts model to allow users to add their mood to their posts. I also added a field called category to the posts model to allow users to categorize their posts.
 - Comments : I added a field called mood to the comments model to allow users to add their mood to their comments.
-
-
 
 ## <a id="testing">Testing</a>
 
@@ -93,8 +149,6 @@ To set up and deploy the project, follow the steps below:
 ### <a id="set-up-virtual-environment">Set Up Virtual Environment</a>
 
 To set up the virtual environment, run the following command:
-
-
 
 ### <a id="set-up-database">Set Up Database</a>
 
@@ -117,9 +171,3 @@ To connect to the frontend, run the following command:
 ### <a id="environment-variables">Environment Variables</a>
 
 The following environment variables are used in the project:
-
-
-
-
-
-
