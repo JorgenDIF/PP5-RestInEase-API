@@ -132,11 +132,11 @@ The models for the project are as follows:
 - Comments
 - Posts
 
-I followed the walthrough from Code Institute to create the models but I customized 3 of them to suit my project. The models are as follows:
+I followed the walthrough from Code Institute to create the models but I customized 2 of them to suit my project. The models are as follows:
 
-- Profile : I added a field called mood to the profile model to allow users to add their mood to their profile.
-- Posts : I added a field called mood to the posts model to allow users to add their mood to their posts. I also added a field called category to the posts model to allow users to categorize their posts.
-- Comments : I added a field called mood to the comments model to allow users to add their mood to their comments.
+
+- Posts : I added a field called mood to the posts model to allow users to add their mood to their posts. I also added a field called category to the posts model to allow users to categorize their posts. Initially, I had planned to create category as a separate general model to make it more dynamic and reusable across different parts of the application. However, due to time constraints, I had to add it directly as a field in the posts model. This is something I plan to refactor in the future to implement a more scalable solution by having a dedicated model for categories. This enhancement is included in my future features roadmap.
+- Comments : I added a field called feeling to the comments model to allow users to add their mood to their comments.
 
 ## <a id="testing">Testing</a>
 
