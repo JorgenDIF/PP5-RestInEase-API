@@ -117,7 +117,7 @@ The ERD for the project:
 <details>
 <summary>Click to see ERD</summary>
 
-![ERD](documents/rest-in-ease-erd.png)
+![ERD](documents/erd-new.png)
 
 </details>
 
@@ -135,8 +135,8 @@ The models for the project are as follows:
 I followed the walthrough from Code Institute to create the models but I customized 2 of them to suit my project. The models are as follows:
 
 
-- Posts : I added a field called mood to the posts model to allow users to add their mood to their posts. I also added a field called category to the posts model to allow users to categorize their posts. Initially, I had planned to create category as a separate general model to make it more dynamic and reusable across different parts of the application. However, due to time constraints, I had to add it directly as a field in the posts model. This is something I plan to refactor in the future to implement a more scalable solution by having a dedicated model for categories. This enhancement is included in my future features roadmap.
-- Comments : I added a field called feeling to the comments model to allow users to add their mood to their comments.
+- Posts: I added a field called mood to the posts model to allow users to add their mood to their posts. I also added a field called category to the posts model to allow users to categorize their posts. Initially, I had planned to create category and mood as separate general models to make it more dynamic and reusable across different parts of the application. However, due to time constraints, I had to add them directly as fields in the posts model. This is something I plan to refactor in the future to implement a more scalable solution by having dedicated models for categories and moods. This enhancement is included in my future features roadmap.
+- 	Comments: Similarly, I added a field called feeling to the comments model to allow users to express their emotions in their comments. Originally, I had intended to create a separate Feeling model, making the system more dynamic and reusable. Due to time constraints, I directly integrated the field into the comments model, but I plan to refactor this for better scalability by creating a separate model for Feeling in the future.
 
 ## <a id="testing">Testing</a>
 
