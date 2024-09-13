@@ -25,7 +25,7 @@
 
 ## <a id="introduction">Introduction</a>
 
-This is the API for Rest in Ease. It is a Django Rest Framework API that is connected to a React frontend
+The Rest In Ease API is designed to manage user-generated content such as posts and comments, allowing users to express their emotions and categorize their content. Currently, certain fields like mood, category, and feeling are hardcoded in both the frontend and backend for simplicity. In the frontend, these fields are placed in separate files as a compromise to ensure modularity. However, in future iterations, these fields will be fully integrated into the backend models, enabling more flexibility and easier updates. This temporary solution was implemented to meet the current project timeline, with plans to enhance this functionality in the future.
 
 ## <a id="purpose-and-goals">Purpose and goals</a>
 
