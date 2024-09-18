@@ -14,14 +14,13 @@
   - [Models](#models)
 - [Testing](#testing)
 - [Set Up and deployment](#set-up-and-deployment)
-  - [Set Up Virtual Environment](#set-up-virtual-environment)
-  - [Set Up Database](#set-up-database)
+  - [Version Control](#version-control)
   - [Set Up Django](#set-up-django)
-  - [Set Up Django Rest Framework](#set-up-django-rest-framework)
   - [Deploy to Heroku](#deploy-to-heroku)
-- [Connect to Frontend](#connect-to-frontend)
-- [Security](#security)
-  - [Environment Variables](#environment-variables)
+- [Technologies Used](#technologies)
+  - [Languages](#languages)
+  - [Tools](#tools)
+  - [Libraries and Frameworks](#libraries)
 
 ## <a id="introduction">Introduction</a>
 
@@ -97,16 +96,47 @@ The API has the following endpoints:
 </details>
 
 ### <a id="crud-functionality">Crud functionality</a>
+The API for the Rest In Ease application provides full CRUD (Create, Read, Update, Delete) functionality for the following models:
 
-The API has CRUD functionality for the following models:
+<details>
+<summary>Click to see Crud</summary>
+
+1.	Posts
+  - Create: Users can create new posts, including text content, images, moods, and categories.
+	- Read: Posts are retrievable via API endpoints for listing all posts or fetching individual posts.
+	- Update: Users can update the content, mood, and category of their existing posts.
+	- Delete: Users can delete their posts, removing them from the platform.
+2.	Comments
+	-  Create: Authenticated users can create comments on posts.
+	- Read: Comments for specific posts are retrievable via API endpoints.
+	- Update: Users can edit their comments.
+	- Delete: Users can delete their comments, removing them from a post.
+3.	Likes
+	- Create: Users can like posts, marking them as liked in the database.
+	- Read: The API allows fetching which posts have been liked by users.
+	- Delete: Users can remove their likes from posts.
+4.	Profiles
+	- Create: User profiles are created automatically upon user registration.
+	- Read: Profiles can be retrieved via API, including profile details and user-generated content.
+	- Update: Users can update their profile information, such as bio and profile image.
+	- Delete: Profiles are not directly deletable, as the application does not provide user account deletion.
+5.	Followers
+	- Create: Users can follow other profiles, creating a following relationship.
+	- Read: Follower and following lists are retrievable via API for a given profile.
+	- Delete: Users can unfollow profiles, removing the following relationship.
+
+Each model follows the standard REST conventions for CRUD operations, ensuring that users can interact with the application seamlessly through the front-end.
+
+</details>
 
 ## <a id="agile-methodology">Agile Methodology</a>
 
-The project was developed using Agile methodology
+The project was developed using Agile methodology. The kanban board is available [here](https://github.com/users/JorgenDIF/projects/7) 
 
 ## <a id="frontend">Frontend</a>
 
-The frontend is a React app that is connected to the API
+The frontend is a React app that is connected to the API. The repo can be found here:
+[Frontend](https://github.com/JorgenDIF/pp5-frontend)
 
 ## <a id="database">Database</a>
 
@@ -222,34 +252,137 @@ I tested endpoints using postman:
 
  </details>
 
-
-
 ## <a id="set-up-and-deployment">Set Up and deployment</a>
 
 To set up and deploy the project, follow the steps below:
 
-### <a id="set-up-virtual-environment">Set Up Virtual Environment</a>
+### <a id="version-control">Version Control</a>
 
-To set up the virtual environment, run the following command:
+<details>
+<summary>Version Control</summary>
+<br>
+The site was created using the Gitpod editor and pushed to github to the remote repository ‘pixavibe-frontend’.
+The following git commands were used throughout development to push code to the remote repo:
 
-### <a id="set-up-database">Set Up Database</a>
-
-To set up the database, run the following command:
+- `git add <file>` - This command was used to add the file(s) to the staging area before they are committed.
+- `git commit -m “commit message”` - This command was used to commit changes to the local repository queue ready for the final step.
+- `git push` - This command was used to push all committed code to the remote repository on github.
+</details>
 
 ### <a id="set-up-django">Set Up Django</a>
 
 To set up Django, run the following command:
 
-### <a id="set-up-django-rest-framework">Set Up Django Rest Framework</a>
+<details>
+<summary>Click to see how to set up Django</summary>
 
-To set up Django Rest Framework, run the following command:
+- Install Django by running the command pip install django.
+- Create a new Django project using django-admin startproject projectname.
+- Navigate to the project folder with cd projectname.
+- Create a new app within your Django project using python manage.py startapp appname.
+- Add your new app to the INSTALLED_APPS section in settings.py.
+- Run initial migrations to set up the database by using python manage.py migrate.
+- Start the development server by running python manage.py runserver.
+- Open your browser and go to http://127.0.0.1:8000/ to see your Django project running locally.
 
-## <a id="connect-to-frontend">Connect to Frontend</a>
+ </details>
 
-To connect to the frontend, run the following command:
+### <a id="deploy-to-heroku">Deploy to Heroku</a>
 
-## <a id="security">Security</a>
+<details>
+<summary>Click to see how deploy to Heroku</summary>
+Deployment Instructions
 
-### <a id="environment-variables">Environment Variables</a>
+Set Up in Gitpod (or your preferred IDE)
 
-The following environment variables are used in the project:
+1.	Create a new workspace in your IDE. For this project, Gitpod was used.
+2.	Set up your Django REST Framework project by following the Django REST Framework guide.
+
+**Project Settings**
+
+- Add https://<your_app_name>.herokuapp.com to the ALLOWED_HOSTS and CSRF_TRUSTED_ORIGINS lists in the settings.py file.
+- Ensure that your environment variables (DATABASE_URL, SECRET_KEY, and CLOUDINARY_URL) are set to use os.environ.get("<variable_name>") to pull values from environment settings.
+- If changes have been made to static files or apps, run collectstatic or migrate as needed.
+- Commit and push the changes to your repository.
+
+**Procfile and Requirements**
+
+- Create a file called Procfile at the root of your project and add:
+- release: python manage.py makemigrations && python manage.py migrate
+- web: gunicorn drf_api.wsgi
+- In your terminal, create a requirements.txt file by running: pip3 freeze > requirements.txt.
+- Optionally, create a runtime.txt to specify your Python version (e.g., python-3.11.9).
+- Commit and push these changes to your repository.
+
+**Deployment to Heroku**
+
+1.	Log in to your Heroku account and create a new app with a unique name, selecting the correct region.
+2.	In the Settings tab, configure Config Vars:
+- DATABASE_URL: Link to your database.
+- SECRET_KEY: A secret key for your project.
+- CLOUDINARY_URL: Link to your Cloudinary account.
+- ALLOWED_HOSTS: The URL of your Heroku app.
+- CLIENT_ORIGIN: The URL of your deployed frontend.
+- CLIENT_ORIGIN_DEV: The URL of your local development frontend.
+3.	In the Deploy tab:
+- Select GitHub as the deployment method, search for your repository, and connect to it.
+- To manually deploy, click Deploy Branch.
+- Ensure that DEBUG is set to False for production.
+- After a successful build, a message will confirm that Your app was successfully deployed. You can view the live site by clicking the View button.
+</details>
+
+## <a id="technologies">Technologies Used</a>
+
+### <a id="languages">Languages Used</a>
+
+- Python: The primary language used to build the backend API.
+
+### <a id="tools">Tools Used</a>
+<details>
+<summary>Click to see Tools used</summary>
+
+- GitPod Enterprise: A cloud-based development environment used for coding and testing. I switched from VS Code to GitPod during the project to better utilize Tutor Support.
+- Lucidchart: Used for creating the Entity-Relationship Diagram (ERD) to visualize the database schema and relationships between models.
+- Git: For version control, managing the history of your codebase.
+- GitHub: For hosting the repository and tracking the development process.
+- Heroku: The cloud platform used for deploying and hosting your application.
+- PostgreSQL: The database system used in your application, managed through Heroku.
+- Cloudinary: For media storage (image hosting and serving).
+</details>
+
+### <a id="libraries">Libraries and Frameworks</a>
+
+<details>
+<summary>Click to see how Libraries and Frameworks</summary>
+
+**Django and REST Framework:**
+
+- Django==3.2.25: The core framework used to build your API.
+- djangorestframework==3.14.0: For creating the API endpoints and handling serialization, views, and permissions.
+
+**Authentication and Security:**
+
+- dj-rest-auth==2.1.9: Provides ready-to-use endpoints for user authentication, including login and registration.
+- djangorestframework-simplejwt==4.7.2: For JWT-based authentication.
+- django-allauth==0.54.0: For managing user authentication and registration flows.
+
+**Database Management:**
+
+- dj-database-url==0.5.0: For handling database configurations.
+- psycopg2-binary==2.9.9: PostgreSQL database adapter for Django.
+
+**Storage and Media:**
+
+- django-cloudinary-storage==0.3.0: For storing and serving media files using Cloudinary.
+- Pillow==10.3.0: For image processing and manipulation.
+
+**Other Utilities:**
+
+- django-cors-headers==4.3.1: To handle cross-origin resource sharing between your frontend and backend.
+- gunicorn==22.0.0: The WSGI HTTP server to run your application in production.
+
+**Networking and Requests:**
+
+- requests==2.32.3: For making HTTP requests when needed.
+
+</details>
