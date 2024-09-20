@@ -394,6 +394,6 @@ Set Up in Gitpod (or your preferred IDE)
 
 </details>
 
-- Credits and acknowledgments for the project can be found in the [Frontend Readme](https://github.com/JorgenDIF/pp5-frontend/blob/main/README.md)
+#### - Credits and acknowledgments for the project can be found in the [Frontend Readme](https://github.com/JorgenDIF/pp5-frontend/blob/main/README.md)
 
 ## [Back to Table of Content](#table-of-content)
