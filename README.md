@@ -1,6 +1,6 @@
 # The API for Rest in Ease
 
-## Table of Contents
+## <a id="table-of-content">Table of Content</a>
 
 - [Introduction](#introduction)
 - [Purpose and goals](#purpose-and-goals)
@@ -393,3 +393,7 @@ Set Up in Gitpod (or your preferred IDE)
 - requests==2.32.3: For making HTTP requests when needed.
 
 </details>
+
+- Credits and acknowledgments for the project can be found in the [Frontend Readme](https://github.com/JorgenDIF/pp5-frontend/blob/main/README.md)
+
+## [Back to Table of Content](#table-of-content)
