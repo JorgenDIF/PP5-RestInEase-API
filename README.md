@@ -13,6 +13,7 @@
   - [Erd](#erd)
   - [Models](#models)
 - [Testing](#testing)
+  - [Valdidation](#validation)
 - [Set Up and deployment](#set-up-and-deployment)
   - [Version Control](#version-control)
   - [Set Up Django](#set-up-django)
@@ -251,6 +252,12 @@ I tested endpoints using postman:
  ![Get Comments](documents/getcomments.png)
 
  </details>
+
+ ## <a id="validation">Validation</a>
+
+### PEP8 Validation
+
+- The project follows PEP8 guidelines, and Autopep8 has been configured as the default Python formatter. After running the validation, no PEP8 errors were found in the code, ensuring that the project adheres to Python’s style guide for clean and consistent code.
 
 ## <a id="set-up-and-deployment">Set Up and deployment</a>
 

@@ -6,6 +6,14 @@ from posts.models import Post
 class Comment(models.Model):
     """
     Comment model, related to User and Post
+
+    This model has been customized to include a 'feeling' field,
+    allowing users to select an emotion that represents their comment.
+    
+    In the future, the 'feeling' field will be refactored into a separate
+    model to provide more flexibility and scalability, enabling easier
+    management of the feeling options and dynamic updates without
+    requiring changes to the code.
     """
     FEELING_CHOICES = [
         ('happy', 'Happy'),

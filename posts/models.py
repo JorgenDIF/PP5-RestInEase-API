@@ -6,6 +6,13 @@ class Post(models.Model):
     """
     Post model, related to 'owner', i.e. a User instance.
     Default image set so that we can always reference image.url.
+
+    This model has been customized to include 'mood' and 'category' fields.
+    These fields are currently defined with predefined choices to enhance user
+    experience by allowing them to select a mood and categorize their posts.
+    
+    In the future, the 'mood' and 'category' fields will be refactored into 
+    separate models to make the system more dynamic and scalable.
     """
     image_filter_choices = [
         ('_1977', '1977'),
