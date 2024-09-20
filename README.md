@@ -25,7 +25,7 @@
 
 ## <a id="introduction">Introduction</a>
 
-The Rest In Ease API is designed to manage user-generated content such as posts and comments, allowing users to express their emotions and categorize their content. Currently, certain fields like mood, category, and feeling are hardcoded in both the frontend and backend due to time constraints. In the frontend, these fields are placed in separate files as a compromise to maintain modularity. However, in future iterations, these fields will be fully integrated into the backend models, enabling more flexibility and easier updates. This temporary solution was implemented to meet the project deadline, and enhancing this functionality is a planned improvement.
+The Rest In Ease API is designed to manage user-generated content such as posts and comments, allowing users to express their emotions and categorize their content. Currently, certain fields like mood, category, and feeling are hardcoded in both the frontend and backend due to time constraints. In the frontend, these fields are placed in separate files as a compromise to maintain modularity. However, in future iterations, these fields will be fully integrated into the backend models, enabling more flexibility and easier updates. This temporary solution was implemented to meet the project deadline, and enhancing this functionality is a planned improvement. The deployed API can be found here [API](https://rest-in-ease-api-003370b5e18f.herokuapp.com/)
 
 ## <a id="purpose-and-goals">Purpose and goals</a>
 
