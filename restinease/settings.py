@@ -106,6 +106,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'restinease.wsgi.application'
 
 # Database
+# Update database 28 feb
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 if 'DEV' in os.environ:
     DATABASES = {
