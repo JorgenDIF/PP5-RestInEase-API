@@ -10,16 +10,9 @@ class Profile(models.Model):
     name = models.CharField(max_length=255, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_profile_qti8c0f'
+        upload_to='images/', default='images/default_profile_gkvnll.jpg'
     )
-    rollercoaster_choices = [
-        ('low', 'Low'),
-        ('in_between', 'In Between'),
-        ('high', 'High')
-    ]
-    rollercoaster = models.CharField(
-        max_length=32, choices=rollercoaster_choices, default='in_between'
-    )
+ 
 
     class Meta:
         ordering = ['-created_at']

@@ -24,11 +24,16 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
 }
+if 'DEV' not in os.environ:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = [
+    'rest_framework.renderers.JSONRenderer' ,
+    ]
 
 REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = "none"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -38,13 +43,22 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.environ.get('DEVELOPMENT') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    ".herokuapp.com",
+    "localhost",
+    "127.0.0.1"
+]
 
-# CORS configuration
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOWED_ORIGINS = [os.environ.get("CLIENT_ORIGIN_DEV")]
-# Application definition
 
+
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+        os.environ.get('CLIENT_ORIGIN')
+    ]
+if 'CLIENT_ORIGIN_DEV' in os.environ:    
+    CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.codeinstitute-ide\.net$",]
+
+CORS_ALLOW_CREDENTIALS =  True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -108,6 +122,7 @@ WSGI_APPLICATION = 'restinease.wsgi.application'
 # Database
 # Update database 28 feb
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 if 'DEV' in os.environ:
     DATABASES = {
         'default': {
@@ -119,6 +134,7 @@ else:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
     }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -160,3 +176,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'restinease.serializers.CurrentUserSerializer'
+}
